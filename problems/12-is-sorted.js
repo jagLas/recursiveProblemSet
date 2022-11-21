@@ -10,7 +10,18 @@ isSorted([2, 4, 6, 7, 8]); // true
 isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
-// your code here
+const isSorted = (array, prevChar = -Infinity) => {
+  let char = array[0];
+  if (array.length === 0) {
+    return true;
+  }
+  if (char > prevChar) {
+    return isSorted(array.slice(1), char);
+
+  } else {
+    return false;
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

@@ -21,22 +21,15 @@ fibonacci(10); // 55
 
 const fibonacci = (n, prev = 1, prev2 = 0) => {
   if (n === 0) {
-    return 0;
+    return prev2;
   }
   if (n === 1) {
-    return 1;
+    return prev;
   }
-
-  return prev + fibonacci(n - 1, );
-
+  let next = prev + prev2;
+  return fibonacci(n - 1, next, prev);
 }
 
-console.log(fibonacci(0)); // 0
-console.log(fibonacci(1)); // 1
-console.log(fibonacci(2)); // 1
-console.log(fibonacci(3)); // 2
-console.log(fibonacci(4)); // 3
-console.log(fibonacci(10)); // 55
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

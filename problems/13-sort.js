@@ -22,7 +22,24 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
+  if (nums.length === 0) {
+    return sorted;
+  }
+
+  let copy = nums.slice()
+
+  //finds the smallest number in the nums array
+  let smallest = copy.reduce((num, next) => {
+    if (next < num){
+      return next;
+    } else {
+      return num
+    }
+  })
+
+  let location = copy.indexOf(smallest);
+  sorted.push(...copy.splice(location, 1));
+  return sort(copy, sorted);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

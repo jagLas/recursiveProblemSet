@@ -10,7 +10,25 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
-// your code here
+// const flatten = array => {
+//   let newArray = []
+//   if (array === undefined) {
+//     return [];
+//   };
+
+//   // console.log('input is')
+//   // console.log(array);
+  
+//   // console.log('    slice is')
+//   // console.log(array.slice(1))
+//   return [array[0], ...flatten(...array.slice(1))];
+// }
+
+// debugger
+// // console.log(flatten([])); // []
+// console.log(flatten([1, 2])); // [1, 2]
+
+// console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
