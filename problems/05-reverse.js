@@ -12,7 +12,15 @@ reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
 
-// your code here
+const reverse = (string, i = 1) => {
+  if (i > string.length){
+    return '';
+  }
+
+  let char = string[string.length - i];
+
+  return char + reverse(string, i + 1);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

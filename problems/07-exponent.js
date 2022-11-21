@@ -21,9 +21,19 @@ exponent(5, 5); // 3125
 ***********************************************************************/
 
 function exponent(b, n) {
-  // your code here
+  //base case is when n has been lowered to 0.
+  if (n === 0) {
+    return 1; //returns 1 to be multiplied
+  }
+
+  //recursion will multiply the numbers together
+  if (n > 0) {
+    return b * exponent(b, n - 1);
+  } else {
+    return (1 / b) * (exponent(b, n + 1));
+  }
 }
-  
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = exponent;
