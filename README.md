@@ -8,3 +8,6 @@ As you complete each problem, use mocha to test your solutions. Make sure you're
 > mocha
 
 We know you've got this!
+
+# user notes
+I completed the first 15 problems in the set, but did not attempt the 3 bonus problems. When more time is available, perhaps I will be able to return to them to attempt them.

@@ -35,8 +35,28 @@ console.log(x[0] === y[0]) // true
 
 
 ***********************************************************************/
+/* The code below was my original code, but it did not seem to duplicate the
+first array. It did, however, duplicate the rest.
+// const deepDup = (arr, newArray = []) => {
 
-// your code here
+//   let el = arr.slice(0,1);
+//   if (arr.slice(1).length === 0) {
+//     return [...el];
+//   } return [...el, deepDup(...arr.slice(1))];
+// }
+*/
+
+const deepDup = arr => {
+  let newArr = [];
+  
+  arr.forEach(el => {
+    if (Array.isArray(el)) {
+      return newArr.push(deepDup(el));
+    }
+    return newArr.push(el)
+  })
+  return newArr;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

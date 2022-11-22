@@ -14,7 +14,24 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
      subset that is the same, except it also does contain 3.
 ***********************************************************************/
 
-// your code here
+const subsets = (arr, subset = [[]]) => {
+  
+  //base case: if the incoming array is zero, then it has found all subsets
+  if (arr.length === 0) {
+    return subset;
+  }
+
+  let num = arr[0];
+  let newSubset = subset.slice()  //copies subsets to new variable
+  
+  subset.forEach(sub => {
+    newSubset.push(sub.concat(num)) //takes each previous subset and combines it with the newest number
+  })
+
+  //returns the recursion. Recursive step slices off first number, and passes in current subsets.
+  return subsets(arr.slice(1), newSubset);
+
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
